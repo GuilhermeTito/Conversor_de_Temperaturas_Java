@@ -7,12 +7,11 @@ public class Main {
         float temp1, temp2;
         int tipo1, tipo2;
 
-        System.out.println("Escolha añaãoü medida a ser convertida: \n1-Celsius\n2-Fahrenheit\n3-Kelvin");
+        System.out.println("Escolha a medida a ser convertida: \n1-Celsius\n2-Fahrenheit\n3-Kelvin");
         tipo1 = leitor.nextInt();
 
         System.out.println("Digite a temperatura a ser convertida:");
         temp1 = leitor.nextFloat();
-        //sim
 
         System.out.println("Escolha para qual medida deseja converter: \n1-Celsius\n2-Fahrenheit\n3-Kelvin");
         tipo2 = leitor.nextInt();
