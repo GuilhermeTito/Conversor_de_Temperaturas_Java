@@ -3,18 +3,17 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args)
     {
-        Scanner leitor = new Scanner(System.in);
         float temp1, temp2;
         int tipo1, tipo2;
 
         System.out.println("Escolha a medida a ser convertida: \n1-Celsius\n2-Fahrenheit\n3-Kelvin");
-        tipo1 = leitor.nextInt();
+        tipo1 = entradaInteira();
 
         System.out.println("Digite a temperatura a ser convertida:");
-        temp1 = leitor.nextFloat();
+        temp1 = entradaPontoFlutuante();
 
         System.out.println("Escolha para qual medida deseja converter: \n1-Celsius\n2-Fahrenheit\n3-Kelvin");
-        tipo2 = leitor.nextInt();
+        tipo2 = entradaInteira();
 
         temp2 = conversor(temp1, tipo1, tipo2);
 
@@ -22,7 +21,44 @@ public class Main {
 
     }
 
-    static float conversor(float temp1, int tipo1, int tipo2)
+    public static int entradaInteira()
+    {
+        Scanner leitor = new Scanner(System.in);
+        boolean ime = true; //InputMismatchException
+        while(ime)
+        {
+            if(leitor.hasNextInt())
+            {
+                ime = false;
+            }
+            else
+            {
+                System.out.println("Inválido. Digite novamente.");
+                leitor.nextLine();
+            }
+        }
+        return leitor.nextInt();
+    }
+
+    public static float entradaPontoFlutuante()
+    {
+        Scanner leitor = new Scanner(System.in);
+        boolean ime = true; //InputMismatchException
+        while(ime)
+        {
+            if(leitor.hasNextFloat())
+            {
+                ime = false;
+            }
+            else
+            {
+                System.out.println("Inválido. Digite novamente.");
+                leitor.nextLine();
+            }
+        }
+        return leitor.nextFloat();
+    }
+    public static float conversor(float temp1, int tipo1, int tipo2)
     {
         // 1 = C, 2 = F, 3 = K
         switch (tipo1) {
